@@ -1,13 +1,17 @@
+# ignore vim temp files                                                                                                                                                     
+*.sw[op]                                                                                                                                                                    
+                                                                                                                                                                            
+# ignore OSX 'folder' metadata                                                                                                                                              
+.DS_Store  
+
+/target
+/classes
+/checkouts
 pom.xml
 pom.xml.asc
 *.jar
 *.class
-/lib/
-/classes/
-/target/
-/checkouts/
-.lein-deps-sum
-.lein-repl-history
-.lein-plugins/
-.lein-failures
-.nrepl-port
+/.lein-*
+/.nrepl-port
+.hgignore
+.hg/
