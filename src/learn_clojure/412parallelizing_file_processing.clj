@@ -5,6 +5,10 @@
 ;;;; I added a bunch of comments to the code since I don't know the bulit-ins yet
 (require ['clojure.java.io :as 'jio])
 
+;;; this does process the function in parallel for each line if the file
+;;; but both reading and writing are single threaded
+;;; this approach is only suitable when the computation is long running 
+;;; vs. reading and writing a line
 (defn pmap-file
   "Process input-file inparallel, applying procssing-fn to each row
   in parallel and output into output-file"
@@ -43,4 +47,8 @@
 ;; note that I put my input files in the resources directory
 ;; from REPL all paths relative to project root
 (pmap-file example-row-fn "resources/input.txt" "resources/output.txt")
+; note that this is not the right way to use the resources directory.  
+; this will fail when running from an uberjar which puts resources in the root
+; see example 44 for how to read resource files
+; writing should go outside the project perhaps?  
 
