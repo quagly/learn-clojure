@@ -7,7 +7,12 @@
                  ; for example 88 logging 
                  [com.taoensso/timbre "4.10.0"]
                  ; for example 413 parallel reducer file processing
-                 [iota "1.1.3"]]
+                 [iota "1.1.3"]
+                 ; for json encoding
+                 ; ETL pipeline with tranducers 
+                 ; cloure.data.json seems to be the most common approach
+                 ; see cookbook 4.23
+                 [cheshire "5.8.0"]]
   :main ^:skip-aot learn-clojure.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
